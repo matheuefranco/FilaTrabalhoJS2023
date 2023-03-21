@@ -3,12 +3,12 @@
 
  // Função para adicionar um elemento à fila
  function adicionarElemento() {
-    const novoNome = document.getElementById("txtNovoNome").value.trim();
-    const cpf = document.getElementById("txtNovoCpf").value.trim();
+    const novoNome = document.getElementById("txtNovoNome");
+    const novoCpf = document.getElementById("txtNovoCpf");
   
     // Verificar se tem algo digitado e mostrar mensagem se necessário
     
-    //const novoAtendimento = new Atendimento();
+   
     //set atributos do atendimento no objeto a partir dos inputs e funções
     // adicionar na fila e mostrar na tela
  }
@@ -21,27 +21,27 @@
  }
  //--------------------------------------------------------------------------------
  function buscarCpf() {
-    const cpf = document.getElementById("txtNovoCpf").value.trim();
+    const cpf = document.getElementById("txtNovoCpf").value.trim(); // o trim retira os espaços em branco
     const atendimento = new Atendimento(null,cpf); // vamos pesquisar só por CPF
     // para cada elemento da fila, verificar com o equals
-    // Deve retornar a posição na fila e caso não seja encontrado avisar
-    for (let item of minhaFila.items) {
+    // Deve retornar a posição na fila e caso não seja encontrado avisar, crie um contador de posicões
+    for (let item of minhaFila.items) { // para cada elemento da fila
       if (item.equals(atendimento)) 
-        alert("CPF encontrado na fila! Posição: " );
+        alert("Achou! Posição: " );
     }
- 
+   // se nao encontrar mostre mensagem
 }
 //--------------------------------------------------------------------------------------------
-function (pessoaAtendida) {
-    const mensagem = document.getElementById("mensagem-remocao");
-    mensagem.innerHTML ="Próximo a ser atendido(a): "+ pessoaAtendida.nome;
-    mensagem.style.display = "block";
+function mostrarMensagemRemocao(pessoaAtendida) {
+    const lblMensagemRemocao = document.getElementById("lblMensagemRemocao");
+    lblMensagemRemocao.innerHTML ="Próximo a ser atendido(a): "+ pessoaAtendida.nome;
+    lblMensagemRemocao.style.display = "block";
 }
 //--------------------------------------------------------------------------------------------
- // Função para atualizar a exibição da fila
- function atualizarFila() {
-   // mostrar todas pessoas da fila
- }
+ // Função para mostrar a  fila
+ function mostrarFila() {
+//
+}
 //--------------------------------------------------------------------------------------------
  // funcao data
  function obterDataAtual() {
