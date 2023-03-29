@@ -5,10 +5,18 @@
  function adicionarElemento() {
     const novoNome = document.getElementById("txtNovoNome");
     const novoCpf = document.getElementById("txtNovoCpf");
-  
     // Verificar se tem algo digitado e mostrar mensagem se necessário
-    
-   
+    const novoAtendimento = new Atendimento();
+    novoAtendimento.nome = novoNome.value;
+    novoAtendimento.cpf = novoCpf.value;
+    novoAtendimento.data = obterDataAtual();
+    novoAtendimento.hora = obterHoraAtual();
+    if(minhaFila.enqueue(novoAtendimento)==true){
+         console.log(minhaFila.toString() );
+         // mostrarFila();
+    }//if
+    else
+      alert("Fila cheia:(");
     //set atributos do atendimento no objeto a partir dos inputs e funções
     // adicionar na fila e mostrar na tela
  }
@@ -22,11 +30,11 @@
  //--------------------------------------------------------------------------------
  function buscarCpf() {
     const cpf = document.getElementById("txtNovoCpf").value.trim(); // o trim retira os espaços em branco
-    const atendimento = new Atendimento(null,cpf); // vamos pesquisar só por CPF
+    const atendimentoBusca = new Atendimento(null,cpf); // vamos pesquisar só por CPF
     // para cada elemento da fila, verificar com o equals
     // Deve retornar a posição na fila e caso não seja encontrado avisar, crie um contador de posicões
-    for (let item of minhaFila.items) { // para cada elemento da fila
-      if (item.equals(atendimento)) 
+    for (let item of minhaFila.itens) { // para cada elemento da fila
+      if (item.equals(atendimentoBusca)) 
         alert("Achou! Posição: " );
     }
    // se nao encontrar mostre mensagem

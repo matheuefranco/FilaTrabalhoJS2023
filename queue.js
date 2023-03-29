@@ -17,7 +17,6 @@
     }
 
     isEmpty(){
-
       return this.itens.length === 0;
     }
 
